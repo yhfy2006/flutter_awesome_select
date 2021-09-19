@@ -13,46 +13,44 @@ import '../keep_alive.dart';
 class FeaturesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      child: ListView(
-        addAutomaticKeepAlives: true,
-        children: <Widget>[
-          StickyHeader(
-            header: const FeaturesHeader('One Line'),
-            content: FeaturesTileOneLine(),
+    return ListView(
+      addAutomaticKeepAlives: true,
+      children: <Widget>[
+        StickyHeader(
+          header: const FeaturesHeader('One Line'),
+          content: FeaturesTileOneLine(),
+        ),
+        StickyHeader(
+          header: const FeaturesHeader('Two Line'),
+          content: FeaturesTileTwoLine(),
+        ),
+        StickyHeader(
+          header: const FeaturesHeader('Leading Widget'),
+          content: FeaturesTileLeading(),
+        ),
+        StickyHeader(
+          header: const FeaturesHeader('Custom Trailing Widget'),
+          content: FeaturesTileTrailing(),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Loading Stats'),
+            content: FeaturesTileLoading(),
           ),
-          StickyHeader(
-            header: const FeaturesHeader('Two Line'),
-            content: FeaturesTileTwoLine(),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Custom Tile Builder'),
+            content: FeaturesTileBuilder(),
           ),
-          StickyHeader(
-            header: const FeaturesHeader('Leading Widget'),
-            content: FeaturesTileLeading(),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Validation'),
+            content: FeaturesTileValidation(),
           ),
-          StickyHeader(
-            header: const FeaturesHeader('Custom Trailing Widget'),
-            content: FeaturesTileTrailing(),
-          ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Loading Stats'),
-              content: FeaturesTileLoading(),
-            ),
-          ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Custom Tile Builder'),
-              content: FeaturesTileBuilder(),
-            ),
-          ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Validation'),
-              content: FeaturesTileValidation(),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -11,42 +11,40 @@ import '../keep_alive.dart';
 class FeaturesSingle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      child: ListView(
-        addAutomaticKeepAlives: true,
-        children: <Widget>[
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Open in Full Page'),
-              content: FeaturesSinglePage(),
-            ),
+    return ListView(
+      addAutomaticKeepAlives: true,
+      children: <Widget>[
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Open in Full Page'),
+            content: FeaturesSinglePage(),
           ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Open in Bottom Sheet'),
-              content: FeaturesSingleSheet(),
-            ),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Open in Bottom Sheet'),
+            content: FeaturesSingleSheet(),
           ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Open in Popup Dialog'),
-              content: FeaturesSinglePopup(),
-            ),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Open in Popup Dialog'),
+            content: FeaturesSinglePopup(),
           ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Use Chips'),
-              content: FeaturesSingleChips(),
-            ),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Use Chips'),
+            content: FeaturesSingleChips(),
           ),
-          KeepAliveWidget(
-            child: StickyHeader(
-              header: const FeaturesHeader('Use Switches'),
-              content: FeaturesSingleSwitches(),
-            ),
+        ),
+        KeepAliveWidget(
+          child: StickyHeader(
+            header: const FeaturesHeader('Use Switches'),
+            content: FeaturesSingleSwitches(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
