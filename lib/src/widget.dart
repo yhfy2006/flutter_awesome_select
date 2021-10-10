@@ -149,6 +149,7 @@ class SmartSelect<T> extends StatefulWidget {
     this.singleValidation,
     this.singleModalValidation,
     this.singleOnChange,
+    this.singleOnChange2,
     this.singleOnSelect,
     this.singleOnModalOpen,
     this.singleOnModalClose,
