@@ -1710,7 +1710,8 @@ class S2SingleState<T> extends S2State<T?> {
     // set cache to final value
     // setState(() => selected = selected.copyWith(choice: selection.choice));
     selected!.choice = selection!.choice;
-    widget.singleOnChange?.call(selected!);
+    S2SingleSelected<T> finalSelected = selected!;
+    widget.singleOnChange?.call(finalSelected);
   }
 
   @override
