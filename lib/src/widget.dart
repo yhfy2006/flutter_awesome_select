@@ -1699,7 +1699,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
 class S2SingleState<T> extends S2State<T?> {
   /// State of the selected choice(s)
   @override
-  S2SingleSelected<T?>? selected;
+  S2SingleSelected<T>? selected;
 
   /// State of choice(s) selection in the modal
   @override
