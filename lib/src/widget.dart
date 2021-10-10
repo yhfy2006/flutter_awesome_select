@@ -87,6 +87,9 @@ class SmartSelect<T> extends StatefulWidget {
 
   /// Called when value changed in single choice widget
   final ValueChanged<S2SingleSelected<T>>? singleOnChange;
+  
+    /// Called when value changed in single choice widget
+  final ValueChanged<S2SingleSelected<T?>>? singleOnChange2;
 
   /// Called when selection has been made in single choice widget
   final S2ChoiceSelect<S2SingleState<T>, S2Choice<T>>? singleOnSelect;
@@ -378,6 +381,7 @@ class SmartSelect<T> extends StatefulWidget {
     S2Choice<T>? selectedChoice,
     S2SingleSelectedResolver<T?>? selectedResolver,
     ValueChanged<S2SingleSelected<T>>? onChange,
+    ValueChanged<S2SingleSelected<T?>>? onChange2,
     S2ChoiceSelect<S2SingleState<T>, S2Choice<T>>? onSelect,
     S2ModalOpen<S2SingleState<T>>? onModalOpen,
     S2ModalClose<S2SingleState<T>>? onModalClose,
@@ -1699,7 +1703,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
 class S2SingleState<T> extends S2State<T?> {
   /// State of the selected choice(s)
   @override
-  S2SingleSelected<T>? selected;
+  S2SingleSelected<T?>? selected;
 
   /// State of choice(s) selection in the modal
   @override
@@ -1710,8 +1714,7 @@ class S2SingleState<T> extends S2State<T?> {
     // set cache to final value
     // setState(() => selected = selected.copyWith(choice: selection.choice));
     selected!.choice = selection!.choice;
-    S2SingleSelected<T> finalSelected = selected!;
-    widget.singleOnChange?.call(finalSelected);
+    widget.singleOnChange2?.call(selected!);
   }
 
   @override
