@@ -461,6 +461,7 @@ class SmartSelect<T> extends StatefulWidget {
         placeholder: placeholder,
       ),
       singleOnChange: onChange,
+      singleOnChange2: onChange2,
       singleOnSelect: onSelect,
       singleOnModalOpen: onModalOpen,
       singleOnModalClose: onModalClose,
